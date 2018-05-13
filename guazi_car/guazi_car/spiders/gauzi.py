@@ -19,7 +19,6 @@ class GauziSpider(scrapy.Spider):
         next_url = response.xpath('//div[@class="con-page search_page_link"]/a[contains(text(),"下一页")]/@href').extract_first()
         if next_url:
             yield scrapy.Request(url="https://www.xin.com"+next_url, callback=self.parse)
-
     # 下一页
     # // div[@class="con-page search_page_link"]/a[contains(text(),"下一页")]
 
